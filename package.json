@@ -1,0 +1,26 @@
+{
+    "name": "practica1",
+    "version": "1.0.0",
+    "description": "practica 1 de nodejs",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon --inspect -r dotenv/config server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/USIP-2022/node-practica1.git"
+    },
+    "author": "jose luis yacelly ramos",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/USIP-2022/node-practica1/issues"
+    },
+    "homepage": "https://github.com/USIP-2022/node-practica1#readme",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "dotenv": "^16.0.2",
+        "express": "^4.18.1",
+        "morgan": "^1.10.0"
+    }
+}
