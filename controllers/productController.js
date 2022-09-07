@@ -89,3 +89,34 @@ exports.editProduct = (req, res) => {
         });
     }
 };
+
+exports.deleteProduct = (req, res) => {
+    const products = JSON.parse(
+        fs.readFileSync(`${__dirname}/../data/products.json`)
+    );
+    const foundProduct = products.find((p) => p.id == req.params.id);
+    if (foundProduct) {
+        const auxProducts = [];
+
+        products.forEach((producto) => {
+            if (producto.id != foundProduct.id) {
+                auxProducts.push(producto);
+            }
+        });
+
+        fs.writeFileSync(
+            `${__dirname}/../data/products.json`,
+            JSON.stringify(auxProducts)
+        );
+        res.status(200).json({
+            status: "success",
+            data: {
+                product: foundProduct,
+            },
+        });
+    } else {
+        res.status(404).json({
+            status: "not found",
+        });
+    }
+};

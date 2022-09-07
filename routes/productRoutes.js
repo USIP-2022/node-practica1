@@ -12,5 +12,6 @@ PUT /api/v1/products/:id
 DELETE /api/v1/products/:id
 */
 productRoutes.route("/:id").put(productController.editProduct);
+productRoutes.route("/:id").delete(productController.deleteProduct);
 
 module.exports = productRoutes;
